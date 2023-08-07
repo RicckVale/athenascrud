@@ -1,30 +1,11 @@
-# Pastelaria - RESTFull API TDD
-
-<p align="center">
-    <img src="./public/imagages-readme/logo2-no-bg.png" style="width: 100%;" alt="Pastelaria Logo">
-</p>
+# ATHENAS CRUD - RESTFull API e CRUD
 
 ## Index
-
-- [About Repository](#about-repository)
-- [Tech Specification](#tech-specification)
-- [Features](#features)
-- [Installation](#installation)
-- [Install with Docker](#install-with-docker)
-- [Unit Test](#unit-test)
-    - [run PHPUnit in local](#run-phpunit-in-local)
-    - [run PHPUnit in SAIL (Docker)](#run-phpunit-in-sail-docker)
-- [API usage](#api-usage)
-    - [API Endpoints](#api-endpoints)
-- [License](#license)
-
-
 
 ## About Repository<a name="about-repository"></a>
 
 This repository is a project of a API RESTful with Laravel 8. 
-The project is a CRUD of Clients, Products and Orders. 
-The project is using TDD (Test Driven Development) with PHPUnit.
+The project is a CRUD of Clients. 
 
 ## Tech Specification <a name="tech-specification"></a>
 
@@ -32,29 +13,14 @@ The project is using TDD (Test Driven Development) with PHPUnit.
 - Laravel 10
 - MySQL 8
 - Docker with Laravel Sail
-- PHPUnit 10 (Test Case/Test Coverage)
+- PHPUnit 10
 
 ## Features <a name="features"></a>
 
-- Clientes:
+- Pessoas:
   - POST, PUT, PATCH, GET List with Pagination, GET with id, Delete
-- Produtos:
+- Categorias:
   - POST, PUT, PATCH, GET List with Pagination, GET with id, Delete
-- Pedidos:
-  - POST, PUT, PATCH, GET List with Pagination, GET with id, Delete, GET Pedidos Produtos, GET Pedidos Clientes
-- Build with Docker
-
-## Installation <a name="installation"></a>
-
-- `git clone https://github.com/NeuronioAzul/api-tdd.git`
-- `cd api_tdd/`
-- `composer install`
-- `cp .env.example .env`
-- Update `.env` and set your database credentials
-- `php artisan key:generate`
-- `php artisan migrate`
-- `php artisan db:seed`
-- `php artisan serve`
 
 ## Install with Docker <a name="install-with-docker"></a>
 
@@ -65,13 +31,8 @@ The project is using TDD (Test Driven Development) with PHPUnit.
 - `php artisan key:generate`
 - `php artisan migrate`
 - `php artisan db:seed`
-- Application http://localhost/
-- Adminer for Database http://localhost:8080/
-  - DBhost: 
-    - server:mysql
-    - user: sail
-    - Password: password
-    - DataBase: api_tdd
+- `php artisan serve`
+- Local http://localhost:8000/
 
 ## Unit Test <a name="unit-test"></a>
 
@@ -86,83 +47,35 @@ vendor/bin/phpunit --testsuite Feature
 vendor/bin/phpunit --testsuite Unit
 ```
 
-#### run PHPUnit in SAIL (Docker) <a name="run-phpunit-in-sail-docker"></a>
-```bash
-# run PHPUnit all test cases
-sail artisan test
-# Unit test only
-sail artisan test --testsuite Feature
-# Feature test only
-sail artisan test --testsuite Unit
-```
-
-#### Code Coverage Report <a name="code-coverage-report"></a>
-
-```bash
-# reports is a directory name
-vendor/bin/phpunit --coverage-html reports/
-```
-A `reports` directory has been created for code coverage report. Open the dashboard.html.
-
-## API usage <a name="api-usage"></a>
-
-### Postman Collection <a name="postman-collection"></a>
-
-Access: [API TDD - Postman Collection](https://www.postman.com/pastelaria-api-restfull-tdd/workspace/pastelaria)
-
 ### Postman Documentation <a name="postman-documentation"></a>
 
-Access: [API TDD - Postman Documentation](https://documenter.getpostman.com/view/5349883/2s93sdYC8z)
+Access: [Athenas CRUD - Documentation Postman](https://documenter.getpostman.com/view/20890833/2s9XxztsD9)
 
 ### API Endpoints <a name="api-endpoints"></a>
 
-- Clientes:
+- Pessoas:
   - POST
-    - /api/v1/clientes
+    - /api/pessoas
   - PUT
-    - /api/v1/clientes/<id>
+    - /api/pessoas/<id>
   - PATCH
-    - /api/v1/clientes/<id>
+    - /api/pessoas/<id>
   - GET List with Pagination
-    - /api/v1/clientes
+    - /api/pessoas
   - GET one
-    - /api/v1/clientes/<id>
+    - /api/pessoas/<id>
   - Delete
-    - /api/v1/clientes/<id>
-- Produtos:
+    - /api/pessoas/<id>
+- Categorias:
   - POST
-    - /api/v1/produtos
+    - /api/categorias
   - PUT
-    - /api/v1/produtos/<id>
+    - /api/categorias/<id>
   - PATCH
-    - /api/v1/produtos/<id>
+    - /api/categorias/<id>
   - GET List with Pagination
-    - /api/v1/produtos
+    - /api/categorias
   - GET with id
-    - /api/v1/produtos/<id>
+    - /api/categorias/<id>
   - Delete
-    - /api/v1/produtos/<id>
-- Pedidos:
-  - POST
-    - /api/v1/pedidos
-  - PUT
-    - /api/v1/pedidos/<id>
-  - PATCH
-    - /api/v1/pedidos/<id>
-  - GET List with Pagination
-    - /api/v1/pedidos
-  - GET with id
-    - /api/v1/pedidos/<id>
-  - Delete
-    - /api/v1/pedidos/<id>
-  - GET Pedidos Produtos
-    - /api/v1/pedidos/<id>/produtos
-  - GET Pedidos Clientes
-    - /api/v1/pedidos/<id>/clientes
-
-
-## License <a name="license"></a>
-
-Projeto sendo disponibilizado sobre a licença [MIT license](https://opensource.org/licenses/MIT).
-
-A framework do Laravel é programa open-sourced licenciado sobre a [MIT license](https://opensource.org/licenses/MIT).
+    - /api/categorias/<id>
